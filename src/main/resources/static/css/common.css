@@ -1,0 +1,40 @@
+a,button {
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
+	
+	
+}
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+a:visited{
+	text-decoration: none;
+}
+a:active{
+	text-decoration: none;
+}
+
+html{ 
+font-size:1mm; 
+} 
+
+.space{
+	height: 0.3rem;
+}
+
+.line{
+	border-bottom: 0.1rem solid #eee;
+}
+ 
+.common-padding{
+	padding-top: 0.8rem;;
+	padding-bottom: 0.8rem;
+	padding-left: 1.4rem;
+	padding-right: 1.4rem;
+}

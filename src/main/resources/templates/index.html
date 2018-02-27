@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="author" content="duanliang, duanliang920.com" />
+		<title></title>
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/page.css" />
+
+	</head>
+
+	<body>
+		<div id="book-details" v-cloak>
+			<div class="container-fluid">
+
+				<div class="row">
+
+					<center><img :src="item.bookImage" class="img-responsive" /></center>
+
+				</div>
+				<div class="space"></div>
+				<div class="line"></div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="common-padding">
+							<div class="row">
+								<div class="col-xs-3  right-border">
+									<div class="common-text data">
+										¥{{ item.bookOldPrice }}
+									</div>
+									<div class="common-text">
+										原价
+									</div>
+								</div>
+
+								<div class="col-xs-3  right-border">
+									<div class="common-text data">
+										¥{{ item.bookNewPrice }}
+									</div>
+									<div class="common-text">
+										现价
+									</div>
+								</div>
+								<div class="col-xs-3  right-border">
+
+									<div class="common-text data">
+										{{ item.bookReadAmount }}
+									</div>
+									<div class="common-text">
+										阅读量
+									</div>
+
+								</div>
+								<div class="col-xs-3 ">
+									<div class="common-text data">{{ item.bookBuyAmount }}</div>
+									<div class="common-text">购买量</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="space"></div>
+						<div class="line">
+
+						</div>
+						<div class="row">
+							<div class="details common-padding">
+								<span class="details-text">
+							{{ item.bookDescription }}
+		                            <!--<a href="#">
+		                                详情＞
+		                            </a>-->
+							</span>
+							</div>
+
+						</div>
+
+						<div class="space"></div>
+						<div class="line"></div>
+						<div class="row">
+
+							<a :href="'list.html?bookId='+item.bookId">
+								<div class="title common-padding">
+									<span class="glyphicon glyphicon-th-list " aria-hidden="true"></span> 目录
+									<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span>
+								</div>
+							</a>
+						</div>
+						<div class="line"></div>
+						<div class="row">
+
+							<div class="title common-padding">
+								<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+								<span>书籍详情</span>
+
+							</div>
+
+						</div>
+						<div class="line"></div>
+						<div class="row">
+
+							<div class="common-padding">
+								<img :src="item.bookDetailsImage" class="img-responsive" />
+
+							</div>
+
+						</div>
+						<div class="line"></div>
+						<div class="row">
+
+							<div class="title common-padding">
+								<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 书友评论
+								
+								<span class="add-comment pull-right">添加书评</span>
+							</div>
+
+						</div>
+						<div class="line"></div>
+						
+						<div class="comments">
+							
+							
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman1.jpg"/>
+												<span class="comment-nickname">639476003</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">真的是我看过的最好的总裁文！</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman2.jpg"/>
+												<span class="comment-nickname">小枫</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">开始我也是拒绝的，但是看到五分之一的时候，我已经被作者设定的宏伟框架和独特的文笔吸引住了，真的是高虐高甜。再到后面</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman3.jpg"/>
+												<span class="comment-nickname">大泽</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">三页一小啪五页一大啪</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman4.jpg"/>
+												<span class="comment-nickname">萝莉静</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">最好看没有之一！随便表白厉爵风！</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman5.jpg"/>
+												<span class="comment-nickname">小可爱</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">虐虐虐！但是结局是美好的</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman6.jpg"/>
+												<span class="comment-nickname">大帅</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">真的好看！前面虐后面甜，看完这一本别的都不入不了眼了</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman7.jpg"/>
+												<span class="comment-nickname">82594960</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">这个男主真的蜜汁疼爱女主啊，我书架上好多这种本，真的这种超有毒</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman8.jpg"/>
+												<span class="comment-nickname">639476003</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">哈哈哈哈哈我一开始也是拒绝的。不过看了下去真的好好看啊。我从来没有看过这么长的，也是我第一次熬夜看小说，好喜欢男主！里面虐的地方也好看，虐的好爽，还哭了好几次。虽然很不现实的小说但蜜汁好看</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman8.jpg"/>
+												<span class="comment-nickname">760034936</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">好喜欢后来的顾小艾，有事业，有深爱自己的人，性格还特别好</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman8.jpg"/>
+												<span class="comment-nickname">1578070706</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">我唯一看过两遍的文，以前再好看的文都觉得看第二遍没有新意了，但这部小说有毒，虽然前半部分很狗血，但后半部分超好看</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="row">
+										<div class="comment-top">
+											<span>
+												<img class="avatar" src="img/avatars/woman8.jpg"/>
+												<span class="comment-nickname">163846379</span>
+											</span>
+	
+											<span class="score pull-right">
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+												<img class="star" src="img/starsy.png"/>
+											</span>
+										</div>
+	
+									</div>
+	
+									<div class="row">
+										<div class="comment-bottom ">
+											<span class="comment-content">我的第一本小说太羞耻了</span>
+											<span class="comment-time pull-right">2天前</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</div>
+							
+							</div>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="row navbar-fixed-bottom">
+
+					<div id="button">
+						<form :action="'pay?bookId='+item.bookId" method="post">
+							<button type="submit" class="btn btn-danger btn-block">立即购买</button>
+
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/startScore.js"></script>
+	<script>
+		$(document).ready(function() {
+			getBookDetails();
+		})
+
+		function getBookDetails() {
+			var bookDetails = new Vue({
+				el: '#book-details',
+				data: {
+					item: {},
+					list: []
+				},
+				beforeCreate: function() {
+					var _self = this;
+					$.ajax({
+						type: "get",
+						url: "get-book-details.do?bookId=1",
+						async: true,
+						success: function(result) {
+							var temp = $.parseJSON(result);
+							_self.item = $.parseJSON(temp.book);
+							_self.list = $.parseJSON(temp.list);
+							console.log(_self.item);
+
+						}
+					});
+
+				}
+			})
+
+		}
+	</script>
+
+</html>

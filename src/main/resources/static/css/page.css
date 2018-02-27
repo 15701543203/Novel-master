@@ -1,0 +1,111 @@
+
+body{
+	overflow-x: hidden;
+	/*background-color: #eee;*/
+	height: 100%;
+	width: 100%;
+	padding-bottom: 2.8rem;
+}
+
+ul{
+	list-style: none;
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+li{
+	padding:0.6rem;
+	color: #666666;
+	font-size: 0.8rem;
+	
+}
+
+html{ 
+font-size:1mm; 
+} 
+
+.data{
+	color: red;
+	font-weight: bold;
+	font-size: 4rem;
+}
+
+.right-border{
+	border-right:0.2rem solid #eee ;
+	
+}
+.common-text{
+	text-align: center;
+}
+
+
+
+.title{
+	font-size: 4.6rem;
+	
+	
+}
+
+
+.contents-list{
+	font-size: 4.6rem;
+	color: #999999;
+	
+}
+  
+.details{
+	height: 7rem;
+	
+}
+
+.details-text{
+	font-size: 3rem;
+}
+
+
+.avatar{
+	width: 3rem;
+	height: 3rem;
+	border-radius:50%;
+	border:  1px  solid black;
+}
+.score{
+	line-height: 3rem;
+}
+.star{
+	width: 1.2rem;
+	height: 1.2rem;
+	
+}
+
+
+
+
+.comment-top{
+	padding-top: 0.8rem;
+	padding-left: 1.4rem;
+	padding-right: 1.4rem;
+}
+
+.comment-bottom{
+	padding-left: 4.5rem;
+	padding-right: 2rem;
+	padding-bottom: 1rem;
+}
+
+.comment-time{
+	color: #999999;
+}
+
+.comment-nickname{
+	color: #999999;
+}
+
+.comment-content{
+	font-size: 4rem;
+}
+
+.add-comment{
+	color: #66ccff ;
+	font-size: 3.5rem;
+	line-height: 2.5rem;
+}

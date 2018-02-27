@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.novel.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.web.novel.pojo.User" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="facebook_id" property="facebookId" jdbcType="VARCHAR" />
+    <result column="user_status" property="userStatus" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from novel_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByFacebookId" parameterType="java.lang.Integer" >
+    delete from novel_user
+    where facebook_id = #{facebookId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert"  parameterType="java.util.HashMap">
+    insert into novel_user (user_name, facebook_id,user_status
+    )
+    values (#{userName}, #{facebookId}, #{userStatus}
+    )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.web.novel.pojo.User" >
+    update novel_user
+    set user_name = #{userName,jdbcType=VARCHAR},
+    facebook_id = #{facebookId,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByFacebookIdStatus" parameterType="java.util.HashMap" >
+    update novel_user
+    set user_status = #{userStatus,jdbcType=VARCHAR}
+    where facebook_id = #{facebookId,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select user_id, user_name, facebook_id,user_status
+    from novel_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByFacebookId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select user_id, user_name, facebook_id,user_status
+    from novel_user
+    where facebook_id = #{facebookId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select user_id, user_name, user_pwd
+    from novel_user
+  </select>
+</mapper>
