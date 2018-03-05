@@ -30,7 +30,7 @@ public class ContentServiceImpl implements ContentService {
 		String path = book.getBookUrl();
 		//查询整本书的路劲，截取之后拼接成章节的路径
 		path = path.substring(0, path.lastIndexOf("/") + 1);
-		System.err.println(path + fileName);
+//		System.err.println(path + fileName);
 
 		try {
 			// 从本地磁盘读取
@@ -43,11 +43,11 @@ public class ContentServiceImpl implements ContentService {
 				if (!line.isEmpty()) {
 					line = "<p>" + line + "</p>";
 				}
-				System.out.println(line);
+//				System.out.println(line);
 				sb.append(line);
 				i++;
 			}
-			System.out.println(i);
+//			System.out.println(i);
 			br.close();
 		} catch (Exception e) {
 		}

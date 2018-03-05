@@ -26,10 +26,13 @@ public class ContentController {
     @ResponseBody
     public String getContent(int chapterId) {
         JsonObject obj = new JsonObject();
+        //获取一章
         Chapter chapter = chapterService.getOneChapter(chapterId);
+        //获取书籍
         Book book = bookService.getOneBookById(chapter.getBookId());
-
+        //使用章节id获取内容
         String content = contentService.getContentByChapterId(chapterId);
+        //判断是否为收费章节
         Boolean isCharge = chapter.getChapterIsCharge() != 0 ? true : false;
         obj.addProperty("isCharge", isCharge);
         if (chapter.getChapterNumber() == 1) {
@@ -57,5 +60,43 @@ public class ContentController {
         }
     }
 
+    
+    @RequestMapping("get-english-content.do")
+    @ResponseBody
+    public String getEnglishContent(int chapterId) {
+		JsonObject jsonObject = new JsonObject();
+		//使用章节的id获取章节
+    	Chapter chapter = chapterService.getOneChapter(chapterId);
+    	//获取书
+		Book book=bookService.getOneBookById(chapter.getBookId());
+		//章节内容
+		String content = contentService.getContentByChapterId(chapterId);
+		//收费状态
+		Boolean isCharge = chapter.getChapterIsCharge() != 0 ? true : false;
+		jsonObject.addProperty("isCharge", isCharge);
+        if (chapter.getChapterNumber() == 1) {
+        	jsonObject.addProperty("lastChapter", false);
+        } else {
+        	jsonObject.addProperty("lastChapter", true);
+        }
+
+        if (isCharge) {
+        	jsonObject.addProperty("content", "购买后可下载全文！");
+        	jsonObject.addProperty("nextChapter", false);
+        	jsonObject.addProperty("chapterId", chapterId);
+        	jsonObject.addProperty("imgUrl", chapter.getChapterImage());
+        	jsonObject.addProperty("bookId", chapter.getBookId());
+        	jsonObject.addProperty("bookName",book.getBookName());
+            return jsonObject.toString();
+        } else {
+        	jsonObject.addProperty("content", content);
+        	jsonObject.addProperty("nextChapter", true);
+        	jsonObject.addProperty("chapterId", chapterId);
+        	jsonObject.addProperty("imgUrl", chapter.getChapterImage());
+        	jsonObject.addProperty("bookId", chapter.getBookId());
+        	jsonObject.addProperty("bookName",book.getBookName());
+            return jsonObject.toString();
+        }
+    }
 
 }

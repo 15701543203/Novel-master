@@ -1,18 +1,25 @@
 package com.web.novel.pojo;
 
 public class Chapter {
+	//章节id
     private Integer chapterId;
 
+    //书籍id
     private Integer bookId;
 
+    //章节名称
     private String chapterName;
 
+    //章节数
     private Integer chapterNumber;
 
+    //章节路径
     private String chapterUrl;
 
+    //章节插图
     private String chapterImage;
 
+    //是否收费
     private Integer chapterIsCharge;
 
     public Integer getChapterId() {

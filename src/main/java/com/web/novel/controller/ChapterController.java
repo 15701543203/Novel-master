@@ -12,7 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
-
+/**
+ * 章节控制器
+ * @Author user
+ *
+ * @Date 2018年3月5日
+ */
 @Controller
 public class ChapterController {
     @Autowired
@@ -23,7 +28,9 @@ public class ChapterController {
     @RequestMapping("get-chapter-list.do")
     @ResponseBody
     public String getChapterList(int bookId){
+    	//获取全部章节
         List<Chapter> chapterList =  chapterService.getChapters(bookId);
+        //获取书籍
         Book book = bookService.getOneBookById(bookId);
         Gson gson = new Gson();
         JsonObject jsonObject = new JsonObject();

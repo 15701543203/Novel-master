@@ -1,24 +1,34 @@
 package com.web.novel.pojo;
 
 public class Book {
+	//书籍编号
     private Integer bookId;
 
+    //书籍名称
     private String bookName;
 
+    //书籍存放路径
     private String bookUrl;
 
+    //书籍简介
     private String bookDescription;
 
+    //原价
     private String bookOldPrice;
 
+    //现价
     private String bookNewPrice;
 
+    //阅读量
     private Integer bookReadAmount;
 
+    //购买量
     private Integer bookBuyAmount;
 
+    //书籍封面图片路径
     private String bookImage;
 
+    //书籍描述图片路径
     private String bookDetailsImage;
 
     public Integer getBookId() {

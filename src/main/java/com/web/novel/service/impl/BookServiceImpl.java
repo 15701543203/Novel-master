@@ -10,7 +10,10 @@ import org.springframework.stereotype.Service;
 public class BookServiceImpl implements BookService {
     @Autowired
     private BookMapper bookMapper;
-
+    
+    /**
+     * 查询书名
+     */
     public Book getOneBookById(int bookId) {
         Book book = bookMapper.selectByPrimaryKey(bookId);
         if (book == null) {

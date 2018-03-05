@@ -38,6 +38,12 @@ public class BookController {
     @Autowired
     private ChapterService chapterService;
 
+    
+    /**
+     * 书籍详细内容
+     * @param bookId
+     * @return
+     */
     @RequestMapping("get-book-details.do")
     @ResponseBody
     public String getBookDetails(int bookId) {
@@ -53,7 +59,14 @@ public class BookController {
         return jsonObject.toString();
     }
 
+    
 
+    /**
+     * 书籍下载
+     * @param bookId
+     * @param httpSession
+     * @return
+     */
     @RequestMapping(value = "download-book.do")
     public ResponseEntity<byte[]> download(Integer bookId, HttpSession httpSession) {
 //        String facebookId = httpSession.getAttribute(ConstanSession.USER__FACEBOOKID).toString();
@@ -81,7 +94,6 @@ public class BookController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         return null;
     }
