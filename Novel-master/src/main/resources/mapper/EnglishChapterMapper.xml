@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.novel.dao.EnglishChapterMapper">
+
+	<select id="selectTotalChapters" parameterType="int" resultType="int">
+		SELECT COUNT(CHAPTER_ID) FROM NOVEL_CHAPTER WHERE BOOK_ID=#{1}
+	</select>
+	
+	<select id="selectEmglishChapter">
+	
+	</select>
+
+	
+	<select id="selectIsCharge">
+		
+	</select>
+</mapper>
